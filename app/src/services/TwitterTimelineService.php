@@ -25,9 +25,6 @@ class TwitterTimelineService
             return date_parse($tweet->created_at)['hour'];
         };
 
-        $tweets_by_hours = array_count_values(array_map($get_hour, $tweets));
-        arsort($tweets_by_hours);
-
-        return $tweets_by_hours;
+        return array_count_values(array_map($get_hour, $tweets));
     }
 }
