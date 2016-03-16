@@ -5,10 +5,12 @@ class TwitterTimelineService
 {
     private $userName;
 
-    public function __construct($userName)
+    public function __construct($userName, $iterator_service)
     {
+        if($iterator_service == null) $iterator_service = new TweetIteratorService($this->userName);
+
         $this->userName = $userName;
-        $this->twitterIteratorService = new TweetIteratorService($this->userName);
+        $this->twitterIteratorService = $iterator_service;
     }
 
     public function getTweetsByHour()

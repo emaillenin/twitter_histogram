@@ -10,7 +10,7 @@ class TweetIteratorServiceTest extends \PHPUnit_Framework_TestCase
     public function testPagination()
     {
         $userName = "emaillenin";
-        $tweetIteratorService = new TweetIteratorService("emaillenin", $this->getMockConnection($userName));
+        $tweetIteratorService = new TweetIteratorService($userName, $this->getMockConnection($userName));
         $allTweets = $tweetIteratorService->getAllTweets();
         $this->assertSame(5, sizeof($allTweets));
     }
