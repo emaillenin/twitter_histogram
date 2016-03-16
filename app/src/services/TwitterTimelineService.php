@@ -1,6 +1,6 @@
 <?php
+namespace TwitterHistogram;
 use Abraham\TwitterOAuth\TwitterOAuth;
-require 'TweetIteratorService.php';
 
 class TwitterTimelineService
 {
@@ -9,8 +9,6 @@ class TwitterTimelineService
 
     public function __construct($userName)
     {
-        $env = getenv('APP_ENV') ?: 'prod';
-        $configServiceProvider = new Igorw\Silex\ConfigServiceProvider(__DIR__ . "/../app/config/$env.json");
         $this->userName = $userName;
         $this->connection = new TwitterOAuth("oQM83XT6kIcaBoVM1wBmP0bib", "udVq8Vx603JW3fmxoxwbleaRcAObUDmSPAz5rOnuwzVVGp9t4t",
             "3355714197-wO1FXugi6jX8i9vhWYzG1MnpjuaE3xH1k575ruA", "xcqv0ErFRAPPmDij5D30BI4sSsT9iHiGcfxLWtiA2cKOI");

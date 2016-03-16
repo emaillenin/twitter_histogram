@@ -1,5 +1,3 @@
 <?php
 
-$loader = require_once __DIR__.'/../../app/bootstrap.php';
-
-$loader->addPrefix('app\\tests', __DIR__);
+require_once __DIR__.'/../../app/bootstrap.php';

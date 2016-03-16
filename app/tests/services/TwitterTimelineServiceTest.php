@@ -1,7 +1,10 @@
 <?php
-require 'TwitterTimelineService.php';
 
-class TwitterTimelineServiceTest extends PHPUnit_Framework_TestCase
+namespace TwitterHistogram\Tests;
+
+use TwitterHistogram\TwitterTimelineService;
+
+class TwitterTimelineServiceTest extends \PHPUnit_Framework_TestCase
 {
     public function testSample()
     {

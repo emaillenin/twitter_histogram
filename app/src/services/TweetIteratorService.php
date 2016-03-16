@@ -1,4 +1,5 @@
 <?php
+namespace TwitterHistogram;
 
 class TwitterIteratorService
 {
