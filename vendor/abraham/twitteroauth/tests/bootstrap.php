@@ -1,0 +1,12 @@
+<?php
+
+require __DIR__ . '/../vendor/autoload.php';
+
+define('TWITTER_CONSUMER_KEY', getenv('TWITTER_CONSUMER_KEY'));
+define('TWITTER_CONSUMER_SECRET', getenv('TWITTER_CONSUMER_SECRET'));
+define('TWITTER_ACCESS_TOKEN', getenv('TWITTER_ACCESS_TOKEN'));
+define('TWITTER_ACCESS_TOKEN_SECRET', getenv('TWITTER_ACCESS_TOKEN_SECRET'));
+define('OAUTH_CALLBACK', getenv('TEST_OAUTH_CALLBACK'));
+define('PROXY', getenv('TEST_CURLOPT_PROXY'));
+define('PROXYUSERPWD', getenv('TEST_CURLOPT_PROXYUSERPWD'));
+define('PROXYPORT', getenv('TEST_CURLOPT_PROXYPORT'));
