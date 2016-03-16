@@ -1,5 +1,6 @@
 <?php
 namespace TwitterHistogram;
+
 use Abraham\TwitterOAuth\TwitterOAuth;
 
 class TwitterTimelineService
@@ -10,9 +11,9 @@ class TwitterTimelineService
     public function __construct($userName)
     {
         $this->userName = $userName;
-        $this->connection = new TwitterOAuth("oQM83XT6kIcaBoVM1wBmP0bib", "udVq8Vx603JW3fmxoxwbleaRcAObUDmSPAz5rOnuwzVVGp9t4t",
-            "3355714197-wO1FXugi6jX8i9vhWYzG1MnpjuaE3xH1k575ruA", "xcqv0ErFRAPPmDij5D30BI4sSsT9iHiGcfxLWtiA2cKOI");
-        $this->connection->setTimeouts(60, 30);
+        $this->connection = new TwitterOAuth(TWITTER_CONSUMER_KEY, TWITTER_CONSUMER_SECRET,
+            TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_TOKEN_SECRET);
+        $this->connection->setTimeouts(60, 60);
         $this->twitterIteratorService = new TwitterIteratorService($this->connection, $this->userName);
     }
 
