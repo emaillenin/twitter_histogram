@@ -1,7 +1,8 @@
 <?php
 namespace TwitterHistogram;
+use Abraham\TwitterOAuth\TwitterOAuth;
 
-class TwitterIteratorService
+class TweetIteratorService
 {
     private $userName;
     private $connection;
@@ -9,10 +10,13 @@ class TwitterIteratorService
     const MAX_TWEETS = 200;
     const USER_TIMELINE = "statuses/user_timeline";
 
-    public function __construct($connection, $userName)
+    public function __construct($userName, $connection = null)
     {
+        if($connection == null) $connection = new TwitterOAuth(TWITTER_CONSUMER_KEY, TWITTER_CONSUMER_SECRET,
+            TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_TOKEN_SECRET);
         $this->userName = $userName;
         $this->connection = $connection;
+        $this->connection->setTimeouts(60, 60);
     }
 
     public function getAllTweets()

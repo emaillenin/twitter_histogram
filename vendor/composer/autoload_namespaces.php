@@ -6,7 +6,12 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'hmmmath\\' => array($vendorDir . '/lstrojny/hmmmath/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
     'Pimple' => array($vendorDir . '/pimple/pimple/lib'),
+    'InterNations\\Component\\HttpMock\\' => array($vendorDir . '/internations/http-mock/src'),
     'Igorw\\Silex' => array($vendorDir . '/igorw/config-service-provider/src'),
+    'Guzzle\\Tests' => array($vendorDir . '/guzzle/guzzle/tests'),
+    'Guzzle' => array($vendorDir . '/guzzle/guzzle/src'),
+    '' => array($baseDir . '/app/src'),
 );
